@@ -41,13 +41,13 @@ class TestBear < MiniTest::Test
 
     fish_eaten = @fish1
     # choose a fish to get from river
-    # test bear's current fish count
+    # test bear and river's current fish count
     assert_equal(0,@bear1.stomach_count)
-    #     assert_equal(5,@river1.fish_count)
+    assert_equal(5,@river1.fish_count)
     # remove fish from river and give to bear
     @river1.remove_fish(fish_eaten)
     @bear1.eat_fish(fish_eaten)
-
+    # check the counts updated
     assert_equal(1,@bear1.stomach_count)
     assert_equal(4, @river1.fish_count)
   end
